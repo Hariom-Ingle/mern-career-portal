@@ -1,7 +1,7 @@
 import { setLoading, setUser } from "@/redux/authSlice";
 import { USER_API_END_POINT } from "@/utils/constant";
 import axios from "axios";
-import { Loader2 } from "lucide-react";
+import { Loader, Loader2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -225,8 +225,7 @@ const Login = () => {
                   {loading ? (
                     <Button className="w-full my-2">
                       {" "}
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please
-                      wait{" "}
+                      <Loader className="mr-2 h-5 w-5 animate-spin" />  {" "}
                     </Button>
                   ) : (
                     <Button

@@ -1,18 +1,18 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import AdminJobs from "./components/admin/AdminJobs"
-import Applicants from './components/admin/Applicants'
-import Companies from './components/admin/Companies'
-import CompanyCreate from './components/admin/CompanyCreate'
-import CompanySetup from './components/admin/CompanySetup'
-import PostJob from './components/admin/PostJob'
-import ProtectedRoute from './components/admin/ProtectedRoute'
 import Login from './components/auth/Login'
 import Signup from './components/auth/Signup'
+import AdminJobs from "./components/employee/AdminJobs"
+import Applicants from './components/employee/Applicants'
+import Companies from './components/employee/Companies'
+import CompanyCreate from './components/employee/CompanyCreate'
+import CompanySetup from './components/employee/CompanySetup'
+import PostJob from './components/employee/PostJob'
+import ProtectedRoute from './components/employee/ProtectedRoute'
 import JobDescription from './components/JobDescription'
-import Browse from './pages/Browse'
-import Home from './pages/Home'
-import Jobs from './pages/Jobs'
-import Profile from './pages/Profile'
+import Browse from './pages/BrowsePage'
+import Home from './pages/HomePage'
+import Jobs from './pages/JobsPage'
+import Profile from './pages/StudentProfilePage'
 
 
 const appRouter = createBrowserRouter([

@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema({
         required:true
     },
     profile:{
-        bio:{type:String},
+        bio: { type: String },
         skills:[{type:String}],
         resume:{type:String}, // URL to resume file
         resumeOriginalName:{type:String},
@@ -38,11 +38,15 @@ const userSchema = new mongoose.Schema({
         degree:{type:String},
         instituteName:{type:String},
         duration:{type:String}, 
+        location:{type:String}
     },
-    experience:{
-        companyname:{type:String},
-        jobrole:{type:String},
-        duration:{type:Number}, 
-    },
+    experience: [
+        {
+          companyName: { type: String },
+          jobRole: { type: String },
+          duration: { type: String },
+          location: { type: String }
+        }
+      ]
 },{timestamps:true});
 export const User = mongoose.model('User', userSchema);

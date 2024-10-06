@@ -132,20 +132,20 @@ const Navbar = () => {
         </div>
       </div> */}
 
-      <nav class="bg-white-400">
-        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-          <div class="relative flex h-16 items-center justify-between">
-            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+      <nav className="bg-white-400">
+        <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div className="relative flex h-16 items-center justify-between">
+            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
               {/* <!-- Mobile menu button--> */}
               <button
                 type="button"
-                class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 aria-controls="mobile-menu"
                 aria-expanded="false"
               >
-                <span class="sr-only">Open main menu</span>
+                <span className="sr-only">Open main menu</span>
                 <svg
-                  class="block h-6 w-6"
+                  className="block h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
@@ -159,7 +159,7 @@ const Navbar = () => {
                   />
                 </svg>
                 <svg
-                  class="hidden h-6 w-6"
+                  className="hidden h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
@@ -174,26 +174,42 @@ const Navbar = () => {
                 </svg>
               </button>
             </div>
-            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
-              <div class="flex flex-shrink-0 items-center">
+            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
+              <div className="flex flex-shrink-0 items-center">
                 <h1 className="text-2xl font-bold">
                   Job<span className="text-[#F83002]">Portal</span>
                 </h1>
               </div>
-              <div class="hidden sm:ml-6 sm:block">
-                <div class="flex space-x-4">
+              <div className="hidden sm:ml-6 sm:block">
+                <div className="flex space-x-4">
                   {user && user.role === "recruiter" ? (
                     <>
-                      <li>
-                        <Link to="/admin/companies">Companies</Link>
-                      </li>
-                      <li>
-                        <Link to="/admin/jobs">Jobs</Link>
-                      </li>
-                      <LogOut />
-                      <Button onClick={logoutHandler} variant="link">
-                        Logout
-                      </Button>
+                      <Link
+                        to="/"
+                        className="relative px-3 py-2 text-sm font-semibold text-[#161D6F] transition ease-linear duration-300 hover:text-blue-500 group"
+                        aria-current="page"
+                      >
+                        Home
+                        <span className="absolute left-0 bottom-0 w-full h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
+                      </Link>
+                      <Link
+                        to="/admin/companies"
+                        className="relative px-3 py-2 text-sm font-semibold text-[#161D6F] transition ease-linear duration-300 hover:text-blue-500 group"
+                        aria-current="page"
+                      >
+                        Companies
+                        <span className="absolute left-0 bottom-0 w-full h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
+                      </Link>
+                      <Link
+                        to="/admin/jobs"
+                        className="relative px-3 py-2 text-sm font-semibold text-[#161D6F] transition ease-linear duration-300 hover:text-blue-500 group"
+                        aria-current="page"
+                      >
+                        Jobs
+                        <span className="absolute left-0 bottom-0 w-full h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
+                      </Link>
+                      
+ 
                     </>
                   ) : (
                     <>
@@ -226,9 +242,9 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               {user ? (
-                <div class="relative ml-3">
+                <div className="relative ml-3">
                   <Popover>
                     <PopoverTrigger asChild>
                       <Avatar className="cursor-pointer">
@@ -277,12 +293,12 @@ const Navbar = () => {
                   </Popover>
                 </div>
               ) : (
-                <div class="flex items-center gap-2">
+                <div className="flex items-center gap-2">
                   <Link to="/login">
                     <Button variant="outline">Login</Button>
                   </Link>
                   <Link to="/signup">
-                    <Button class="bg-[#6A38C2] hover:bg-[#5b30a6]">
+                    <Button className="bg-[#6A38C2] hover:bg-[#5b30a6]">
                       Signup
                     </Button>
                   </Link>
@@ -291,23 +307,23 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <div class="sm:hidden" id="mobile-menu">
-          <div class="space-y-1 px-2 pb-3 pt-2">
+        <div className="sm:hidden" id="mobile-menu">
+          <div className="space-y-1 px-2 pb-3 pt-2">
             <Link
               to="/"
-              class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+              className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
             >
               Dashboard
             </Link>
             <Link
               to="/jobs"
-              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
             >
               Jobs
             </Link>
             <Link
               to="/browse"
-              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
             >
               Browse
             </Link>
