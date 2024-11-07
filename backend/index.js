@@ -44,31 +44,13 @@ app.use("/api/v1/job", jobRoute);
 app.use("/api/v1/application", applicationRoute);
 app.use("/api/v1/admin", adminRoute);
 
-// Serve static files in production
 if (process.env.NODE_ENV === "production") {
-  // Serve assets with correct MIME type for CSS, JS, etc.
-  app.use("/assets", express.static(path.join(__dirname, "../frontend/dist/assets"), {
-    setHeaders: (res, path) => {
-      if (path.endsWith(".css")) {
-        res.setHeader("Content-Type", "text/css");
-      } else if (path.endsWith(".js")) {
-        res.setHeader("Content-Type", "application/javascript");
-      } else if (path.endsWith(".json")) {
-        res.setHeader("Content-Type", "application/json");
-      } else if (path.endsWith(".png")) {
-        res.setHeader("Content-Type", "image/png");
-      }
-    }
-  }));
-  
-  // Serve the frontend build
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
-
-  // Fallback for SPA
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "../frontend/dist", "index.html"));
   });
 }
+
 
 // Start Server and Connect to Database
 app.listen(PORT, async () => {
