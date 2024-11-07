@@ -48,7 +48,7 @@ const AdminCompaniesTable = () => {
       setLoading(true); // Start the spinner
       axios.defaults.withCredentials = true;
       const response = await axios.post(
-        `http://localhost:8000/api/v1/admin/${id}/update`,
+        `ADMIN_API_END_POINT${id}/update`,
         { status }
       );
 
