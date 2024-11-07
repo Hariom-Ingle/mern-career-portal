@@ -45,7 +45,7 @@ app.use("/api/v1/application", applicationRoute);
 app.use("/api/v1/admin", adminRoute);
 
 if (process.env.NODE_ENV === "production") {
-  // Serve static files from the dist folder
+  // Serve static files from the correct path
   app.use("/assets", express.static(path.join(__dirname, "frontend", "dist", "assets")));
 
   // Serve the index.html for all routes
