@@ -1,6 +1,12 @@
-import useGetAppliedJobs from "@/hooks/useGetAppliedJobs";
 import AppliedJobTable from "@/components/AppliedJobTable";
+import useGetAppliedJobs from "@/hooks/useGetAppliedJobs";
 
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@radix-ui/react-tooltip";
 import {
   CalendarDays,
   Contact,
@@ -11,26 +17,20 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import AddExperienceDialog from "../components/AddExperienceDialog";
 import Navbar from "../components/Navbar";
 import { Badge } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
+// import UpdateEducationDialog from "../components/UpdateEducationDialog.jsx";
+import UpdateExperienceDialog from "../components/UpdateExprienceDialog.jsx";
 import UpdateProfileDialog from "../components/UpdateProfileDialog.jsx";
-import UpdateEducationDialog from "../components/UpdateEducationDialog.jsx";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@radix-ui/react-tooltip";
-import AddExperienceDialog from "../components/AddExperienceDialog";
-import UpdateExperienceDialog from "../components/UpdateExprienceDialog";
 
 const isResume = true;
 
 const Profile = () => {
   useGetAppliedJobs();
   const [openProfiledialog, setOpenProfiledialog] = useState(false);
-  const [openEducationdialog, setOpenEducationdialog] = useState(false);
+  // const [openEducationdialog, setOpenEducationdialog] = useState(false);
   const [openAddExperienceDialog, setOpenAddExperienceDialog] = useState(false);
   const [openUpdateExperienceDialog, setOpenUpdateExperienceDialog] = useState(false);
   const [openRemoveExperienceDialog, setOpenRemoveExperienceDialog] = useState(false);
@@ -168,7 +168,7 @@ const Profile = () => {
                   </div>
 
                   {/************ EDUCATION UPDATE **************/}
-                  <div className="border-t-2 mt-5">
+                  {/* <div className="border-t-2 mt-5">
                     <div className="flex  flex-col gap-2 text-left border-b-2 mt-5 p-5 ">
                       <h1 className="text-2xl font-bold">
                         Education Details{" "}
@@ -218,7 +218,7 @@ const Profile = () => {
                       <MapPin />
                       <p>Yavatmal</p>
                     </div>
-                  </div>
+                  </div> */}
                   {/************ add JOB EXPRIENCE **************/}
                   <div className="border-t-2 mt-5">
                     <div className="flex justify-between items-center p-5">
@@ -320,10 +320,10 @@ const Profile = () => {
         open={openProfiledialog}
         setOpen={setOpenProfiledialog}
       />
-      <UpdateEducationDialog
+      {/* <UpdateEducationDialog
         open={openEducationdialog}
         setOpen={setOpenEducationdialog}
-      />
+      /> */}
       {/* Add Experience Dialog */}
       <AddExperienceDialog
         open={openAddExperienceDialog}
