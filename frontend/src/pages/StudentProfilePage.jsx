@@ -15,7 +15,7 @@ import Navbar from "../components/Navbar";
 import { Badge } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
 import UpdateProfileDialog from "../components/UpdateProfileDialog.jsx";
-import UpdateEducationDialog from "../components/UpdateEducationDialog";
+import UpdateEducationDialog from "../components/UpdateEducationDialog.jsx";
 import {
   Tooltip,
   TooltipContent,
