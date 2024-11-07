@@ -11,10 +11,10 @@ const AppliedJobTable = () => {
                 {/* <TableCaption>A list of your applied jobs</TableCaption> */}
                 <TableHeader>
                     <TableRow>
-                        <TableHead>Date</TableHead>
-                        <TableHead>Job Role</TableHead>
-                        <TableHead>Company</TableHead>
-                        <TableHead className="text-right">Status</TableHead>
+                        <TableHead className="font-bold">Date</TableHead>
+                        <TableHead className="font-bold">Job Role</TableHead>
+                        <TableHead className="font-bold">Company</TableHead>
+                        <TableHead className="text-right font-bold">Status</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>

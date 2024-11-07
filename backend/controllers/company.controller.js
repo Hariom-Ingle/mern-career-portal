@@ -10,15 +10,15 @@ export const registerCompany = async (req, res) => {
                 message: "Company name is required.",
                 success: false
             });
-        }
+        } 
         let company = await Company.findOne({ name: companyName });
         if (company) {
             return res.status(400).json({
                 message: "You can't register same company.",
                 success: false
             })
-        };
-        company = await Company.create({
+        }; 
+        company = await Company.create({ 
             name: companyName,
             userId: req.id
         });
@@ -96,5 +96,62 @@ export const updateCompany = async (req, res) => {
 
     } catch (error) {
         console.log(error);
+    }
+}
+
+export const updateStatus = async (req,res) => {
+    try {
+        const {status} = req.body;
+        const companyId = req.params.id;
+        if(!status){
+            return res.status(400).json({
+                message:'status is required',
+                success:false
+            })
+        };
+
+        // find the company  by company id
+        const company = await Company.findOne({_id:companyId});
+        if(!company){
+            return res.status(404).json({
+                message:"company not found.",
+                success:false
+            })
+        };
+
+        // update the status
+        company.status = status.toLowerCase();
+        await company.save();
+
+        return res.status(200).json({
+            message:"Status updated successfully.",
+            success:true
+        });
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const getAllCompaniesAdmin = async (req, res) => {
+    try {
+        const companies = await Company.find(); // Fetches all companies
+        if (!companies || companies.length === 0) {
+            return res.status(404).json({
+                message: "No companies found.",   
+                success: false
+            });
+        }
+        return res.status(200).json({ 
+            
+            companies,
+            success: true
+        }); 
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            message: "Server error occurred.",
+            success: false
+        });
     }
 }

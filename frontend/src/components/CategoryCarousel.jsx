@@ -22,7 +22,7 @@ const CategoryCarousel = () => {
     }
 
     return (
-        <div>
+        <div className='mb-36  hidden  sm:block'>
         <Carousel className="w-full max-w-xl mx-auto my-20">
           <CarouselContent>
             {category.map((cat, index) => (

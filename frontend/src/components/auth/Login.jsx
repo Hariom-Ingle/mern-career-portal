@@ -163,32 +163,32 @@ const Login = () => {
                 </div> */}
 
                 <div class="my-12 border-b text-center">
-                  <div class="leading-none px-2 inline-block text-l text-[#011106] tracking-wide font-medium bg-white transform translate-y-1/2">
+                  <div class="leading-none px-2 inline-block text-l text-[#011106] tracking-wide font-semibold uppercase bg-white transform translate-y-1/2">
                     sign In
                   </div>
                 </div>
 
                 <div class="mx-auto max-w-xs">
-                  <div className="my-2">
-                    <Label>Email</Label>
+                  <div className="my-2 font-semibold">
+                    <Label className="  leading-none   inline-block text-l text-[#011106] tracking-wide font-semibold uppercase bg-white transform translate-y-1/2">Email</Label>
                     <Input
                       class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
                       type="email"
                       value={input.email}
                       name="email"
                       onChange={changeEventHandler}
-                      placeholder="patel@gmail.com"
+                      placeholder="Email"
                     />
                   </div>
                   <div className="my-2">
-                    <Label>Password</Label>
+                    <Label className="  leading-none   inline-block text-l text-[#011106] tracking-wide font-semibold uppercase bg-white transform translate-y-1/2">Password</Label>
                     <Input
                       class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
                       type="password"
                       value={input.password}
                       name="password"
                       onChange={changeEventHandler}
-                      placeholder="patel@gmail.com"
+                      placeholder="Password"
                     />
                   </div>
 
@@ -204,7 +204,20 @@ const Login = () => {
                             onChange={changeEventHandler}
                             className="appearance-none h-2 w-1 border border-gray-300 rounded-full checked:bg-green-400 checked:border-transparent focus:outline-none transition duration-200 ease-in-out"
                           />
-                          <span>Student</span>
+                          <span className="text-[#011106] ">Student</span>
+                        </label>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <label className="flex items-center space-x-2 cursor-pointer">
+                          <Input
+                            type="radio"
+                            name="role"
+                            value="admin"
+                            checked={input.role === "admin"}
+                            onChange={changeEventHandler}
+                            className="appearance-none h-1 w-1 border border-gray-300 rounded-full checked:bg-green-400 checked:border-transparent focus:outline-none transition duration-200 ease-in-out"
+                          />
+                          <span>admin</span>
                         </label>
                       </div>
                       <div className="flex items-center space-x-2">

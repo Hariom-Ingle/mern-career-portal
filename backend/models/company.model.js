@@ -9,19 +9,24 @@ const companySchema = new mongoose.Schema({
     description:{
         type:String, 
     },
-    website:{
+    website:{    
         type:String 
     },
     location:{
-        type:String 
+        type:String   
     },
     logo:{
         type:String // URL to company logo
     },
     userId:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:'User',
+        ref:'User', 
         required:true
-    }
-},{timestamps:true})
-export const Company = mongoose.model("Company", companySchema);
+    },
+    status:{
+        type:String,
+        enum:['pending', 'verified', 'rejected'],
+        default:'pending'
+    } 
+},{timestamps:true}) 
+export const Company = mongoose.model("Company", companySchema); 

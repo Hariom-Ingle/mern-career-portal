@@ -52,45 +52,66 @@ const Profile = () => {
 
       <div className="container mx-auto p-5">
         <div className="flex flex-col md:flex-row">
-        
-          {/* Sidebar */}
-          <nav className="md:w-1/4 bg-white h-full p-5 rounded-xl border border-gray-200 mb-5 md:mb-0">
-            <div className="w-36 h-36 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full border-2 border-green-300 overflow-hidden mx-auto">
+          {/* Sidebar - Image and Navigation */}
+          <div className="md:w-1/4 bg-white-500 h-full p-5 rounded-xl border border-gray-200 mb-5 md:mb-0">
+            {/* Profile Image */}
+            <div className="w-36 h-36 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden mx-auto">
               <img
                 src={user?.profile?.profilePhoto}
-                alt={`${user?.fullname}'s Profile`}
+                alt="Profile"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="text-center my-3">
-              <h1 className="text-lg font-bold text-black">{user?.fullname}</h1>
+              <h2 className="text-lg font-bold text-black">{user?.fullname}</h2>
             </div>
 
-            {/* Sidebar Navigation */}
-            <div className="flex justify-between md:flex-col overflow-x-auto md:overflow-visible gap-5 text-black text-center my-5 md:gap-2 md:space-y-2">
-              {["profile", "bookmarks", "applications", "account"].map((tab) => (
-                <div
-                  key={tab}
-                  className={`cursor-pointer p-2 hover:bg-slate-100 hover:transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110   duration-300 ... rounded whitespace-nowrap ${
-                    selectedTab === tab ? "bg-slate-300 shadow-xl shadow-zinc-400 " : ""
-                  }`}
-                  onClick={() => setSelectedTab(tab)}
-                >
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                </div>
-              ))}
+            {/* Navigation Links - Horizontal Scroll on Mobile */}
+            <div className="flex md:flex-col overflow-x-auto md:overflow-visible gap-2 text-black text-center my-5 md:my-0 md:gap-2 md:space-y-2">
+              <div
+                className={`cursor-pointer p-2 hover:bg-slate-100 rounded whitespace-nowrap ${
+                  selectedTab === "profile" ? "bg-slate-300" : ""
+                }`}
+                onClick={() => setSelectedTab("profile")}
+              >
+                My Profile
+              </div>
+              <div
+                className={`cursor-pointer p-2 hover:bg-slate-100 rounded whitespace-nowrap ${
+                  selectedTab === "bookmarks" ? "bg-slate-300" : ""
+                }`}
+                onClick={() => setSelectedTab("bookmarks")}
+              >
+                Bookmarks
+              </div>
+              <div
+                className={`cursor-pointer p-2 hover:bg-slate-100 rounded whitespace-nowrap ${
+                  selectedTab === "applications" ? "bg-slate-300" : ""
+                }`}
+                onClick={() => setSelectedTab("applications")}
+              >
+                Applications
+              </div>
+              <div
+                className={`cursor-pointer p-2 hover:bg-slate-100 rounded whitespace-nowrap ${
+                  selectedTab === "account" ? "bg-slate-300" : ""
+                }`}
+                onClick={() => setSelectedTab("account")}
+              >
+                Account
+              </div>
             </div>
-          </nav>
+          </div>
 
           {/* Right Content Area */}
-          <div className="md:w-3/4 px-5 rounded-xl ml-0 md:ml-5 h-screen overflow-y-auto  " >
-            <div className="bg-white border border-gray-200 rounded-2xl shadow-xl  ">
+          <div className="md:w-3/4 px-5 rounded-xl ml-0 md:ml-5 h-screen overflow-y-auto " >
+            <div className="bg-white border border-gray-200 rounded-2xl ">
               {/* Profile Section */}
               {selectedTab === "profile" && (
                 <>
                   <div>
-                    <div className="flex  flex-col gap-2 text-left border-b-2 p-5  ">
-                      <h1 className="text-2xl font-bold ">Profile </h1>
+                    <div className="flex  flex-col gap-2 text-left border-b-2 px-4 ">
+                      <h1 className="font-medium text-3xl">Profile </h1>
                       <p className="font-small text-md  mb-5">
                         Elevate your Job Finder experience by managing your
                         employment information, and unlock new career
@@ -100,7 +121,7 @@ const Profile = () => {
 
                     <div className="flex justify-between items-center mt-5 p-5">
                       <div>
-                        <h1 className=" text-xl font-medium mb-2">
+                        <h1 className="font-medium text-3xl mb-2">
                           {user?.fullname}
                         </h1>
                         <p className="text-small">{user?.profile?.bio}</p>
@@ -137,11 +158,11 @@ const Profile = () => {
                     </div>
 
                     <div className="my-5 px-5">
-                      <h1 className="text-xl font-medium mb-2">Skills</h1>
+                      <h1>Skills</h1>
                       <div className="flex flex-wrap gap-2">
                         {user?.profile?.skills.length ? (
                           user?.profile?.skills.map((item, index) => (
-                            <Badge variant="outline" className="  bg-slate-200" key={index}>{item}</Badge>
+                            <Badge key={index}>{item}</Badge>
                           ))
                         ) : (
                           <span>NA</span>
@@ -150,7 +171,7 @@ const Profile = () => {
                     </div>
 
                     <div className="my-5 px-5">
-                      <h1 className="text-xl font-medium mb-2">Resume</h1>
+                      <h1>Resume</h1>
                       <div>
                         {isResume ? (
                           <a
@@ -170,7 +191,7 @@ const Profile = () => {
                   {/************ EDUCATION UPDATE **************/}
                   <div className="border-t-2 mt-5">
                     <div className="flex  flex-col gap-2 text-left border-b-2 mt-5 p-5 ">
-                      <h1 className="text-2xl font-bold">
+                      <h1 className="font-medium text-3xl">
                         Education Details{" "}
                       </h1>
                       <p className="font-small text-md  mb-5">
@@ -222,7 +243,7 @@ const Profile = () => {
                   {/************ add JOB EXPRIENCE **************/}
                   <div className="border-t-2 mt-5">
                     <div className="flex justify-between items-center p-5">
-                      <h1 className="text-2xl font-bold">
+                      <h1 className="font-medium text-3xl">
                         Experience Details
                       </h1>
                       <Button
@@ -290,7 +311,7 @@ const Profile = () => {
               {/* Bookmarks Section */}
               {selectedTab === "bookmarks" && (
                 <div>
-                  <h1 className="text-2xl font-bold p-5">Bookmarks</h1>
+                  <h1 className="font-medium text-xl">Bookmarks</h1>
                   <p>Your bookmarked jobs will appear here.</p>
                 </div>
               )}
@@ -298,7 +319,7 @@ const Profile = () => {
               {/* Applications Section */}
               {selectedTab === "applications" && (
                 <div>
-                  <h1 className=" text-2xl font-bold p-5">Applications</h1>
+                  <h1 className="font-medium text-xl p-5">Applications</h1>
                    <AppliedJobTable/>
                 </div>
               )}

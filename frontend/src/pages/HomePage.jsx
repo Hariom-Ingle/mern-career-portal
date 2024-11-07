@@ -7,6 +7,7 @@ import Footer from '../components/Footer'
 import HeroSection from '../components/HeroSection'
 import LatestJobs from '../components/LatestJobs'
 import Navbar from '../components/Navbar'
+import HeroCompaniesSection from '@/components/HeroCompaniesSection'
 
 const Home = () => {
   useGetAllJobs();
@@ -14,14 +15,17 @@ const Home = () => {
   const navigate = useNavigate();
   useEffect(() => {
     if (user?.role === 'recruiter') {
-      navigate("/admin/companies");
+      navigate("/");
     }
   }, []);
   return (
     <div>
+      <div className='maglicpattern'>
       <Navbar />
       <HeroSection />
       <CategoryCarousel />
+      </div>
+     
       <LatestJobs />
       <Footer />
     </div>
