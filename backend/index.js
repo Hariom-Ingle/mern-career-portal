@@ -11,7 +11,7 @@ import adminRoute from "./routes/admin.route.js";
 import path from "path";
 
 // Load environment variables
-dotenv.config({});
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -23,7 +23,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // CORS Configuration
-const allowedOrigins = ['https://job-portal-frontend-kc2b.onrender.com/', 'https://job-portal-frontend-kc2b.onrender.com/'];
+const allowedOrigins = ['https://job-portal-frontend-kc2b.onrender.com'];
+
 app.use(
   cors({
     origin: (origin, callback) => {
@@ -33,7 +34,7 @@ app.use(
         callback(new Error("Not allowed by CORS"));
       }
     },
-    credentials: true,
+    credentials: true, // Enable cookies and authorization headers if needed
   })
 );
 
@@ -44,23 +45,16 @@ app.use("/api/v1/job", jobRoute);
 app.use("/api/v1/application", applicationRoute);
 app.use("/api/v1/admin", adminRoute);
 
-// if (process.env.NODE_ENV === "production") {
-//   // Serve static files from the correct path
-//   app.use("/assets", express.static(path.join(__dirname, "frontend", "dist", "assets")));
+// Serve frontend files in production
+if (process.env.NODE_ENV === "production") {
+  // Serve static files from the correct path
+  app.use(express.static(path.join(__dirname, "frontend", "dist")));
 
-//   // Serve the index.html for all routes
-//   app.get("*", (req, res) => {
-//     res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
-//   });
-// }
-
-// if (process.env.NODE_ENV === "production") {
-// 	app.use(express.static(path.join(__dirname, "/frontend/dist")));
-
-// 	app.get("*", (req, res) => {
-// 		res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
-// 	});
-// }
+  // Serve the index.html for all routes
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+  });
+}
 
 // Start Server and Connect to Database
 app.listen(PORT, async () => {
