@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // CORS Configuration
-const allowedOrigins = ['http://localhost:5173', 'http://localhost:5174'];
+const allowedOrigins = ['https://job-portal-frontend-kc2b.onrender.com/', 'https://job-portal-frontend-kc2b.onrender.com/'];
 app.use(
   cors({
     origin: (origin, callback) => {
