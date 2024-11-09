@@ -76,7 +76,7 @@ const AdminDashboard = () => {
   return (
     <div>
       <Navbar />
-      <div className="container mx-auto p-5">
+      <div className="container mx-auto p-2 sm:p-5">
         <div className="flex flex-col md:flex-row">
           {/* Sidebar */}
           <nav className="md:w-1/4 bg-white h-full p-5 rounded-xl border border-gray-200 mb-5 md:mb-0">
@@ -102,7 +102,7 @@ const AdminDashboard = () => {
           </nav>
 
           {/* Main Content */}
-          <div className="md:w-3/4 px-5 rounded-xl ml-0 md:ml-5 h-screen overflow-y-auto ">
+          <div className="md:w-3/4 px-1 sm:px-3 md:px-5  rounded-xl ml-0 md:ml-5 h-screen overflow-y-auto ">
             <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-xl">
               {selectedTab === "overview" && (
                 <>

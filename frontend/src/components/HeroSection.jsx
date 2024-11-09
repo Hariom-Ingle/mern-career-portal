@@ -31,7 +31,7 @@ const HeroSection = () => {
         <Skeleton
           className={`mx-auto px-4 py-1 rounded-full ${
             isLoading ? "bg-gray-300" : "bg-white text-yellow-500"
-          } outline-dotted text-lg sm:text-xl font-medium`}
+          } outline-dotted text-sm sm:text-xl font-medium`}
           visible={!isLoading}
         >
           No. 1 Job Hunt Website

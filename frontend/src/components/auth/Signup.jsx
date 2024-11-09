@@ -92,7 +92,7 @@ const Signup = () => {
                       name="fullname"
                       onChange={changeEventHandler}
                       placeholder="Full Name"
-                      className="w-full px-8 py-4 rounded-lg bg-gray-100 border border-gray-200 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                      className="w-full px-8 py-4 rounded-lg bg-gray-100 border border-gray-200 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
                     />
                   </div>
 
@@ -127,7 +127,7 @@ const Signup = () => {
                       value={input.password}
                       name="password"
                       onChange={changeEventHandler}
-                      placeholder="password"
+                      placeholder="Password"
                       className="w-full px-8 py-4 rounded-lg bg-gray-100 border border-gray-200 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
                     />
                   </div>
@@ -170,13 +170,13 @@ const Signup = () => {
                   </div>
 
                   {loading ? (
-                    <Button className="w-full my-4 mt-5 bg-green-400 text-white py-4 rounded-lg hover:bg-green-700 transition-all flex items-center justify-center">
+                    <Button className="w-full my-4 mt-5  text-black py-4 rounded-lg hover:bg-green-700 transition-all flex items-center justify-center">
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please wait
                     </Button>
                   ) : (
                     <Button
                       type="submit"
-                      className="w-full my-4 mt-5 bg-green-400 text-white py-4 rounded-lg hover:bg-green-700 transition-all"
+                      className="w-full my-4 mt-5 bg-gradient-to-r from-blue-500 to-purple-700 shadow-lg transition-all"
                     >
                       Signup
                     </Button>
@@ -191,6 +191,14 @@ const Signup = () => {
                 </div>
               </div>
             </form>
+          </div>
+          <div class="flex-1 bg-green-100 text-center   justify-center align-middle hidden lg:flex">
+            <div class="m-12 xl:m-16 w-full  flex align-center justify-center ">
+              <h1 className=" text-5xl text-[#011106]">
+                Better hiring, <br />
+                all-together.
+              </h1>
+            </div>
           </div>
         </div>
       </div>

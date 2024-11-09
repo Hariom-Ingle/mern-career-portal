@@ -21,7 +21,7 @@
 
   }
 
-  nav{
+  .navbar{
     background: rgba( 255, 255, 255, 0.1 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 )!important;
     backdrop-filter: blur( 8px )!important;
@@ -32,7 +32,7 @@
 
   /* Applies to webkit-based browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
-  width: 10px;             /* Width of the scrollbar */
+  width: 0px;             /* Width of the scrollbar */
   height: 12px;            /* Height for horizontal scrollbar */
 }
 

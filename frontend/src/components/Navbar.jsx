@@ -34,7 +34,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gradient-to-r from-blue-500 to-purple-700 shadow-lg">
+    <nav className="bg-gradient-to-r from-blue-500 to-purple-700 shadow-lg rounded-md sticky top-0 z-50">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 transition-all duration-300">
         <div className="relative flex h-16 items-center justify-between">
           {/* Left Section: Logo and Menu Toggle */}
