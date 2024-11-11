@@ -1,7 +1,7 @@
 import { setLoading, setUser } from "@/redux/authSlice";
 import { USER_API_END_POINT } from "@/utils/constant";
 import axios from "axios";
-import {   Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -58,27 +58,27 @@ const Login = () => {
       <Navbar />
        
 
-      <div class="  bg-gray-100 text-gray-900 flex justify-center">
-        <div class="max-w-screen-xl m-0 sm:mx-10 sm:mt-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
-          <div class="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
+      <div  className="  bg-gray-100 text-gray-900 flex justify-center">
+        <div  className="max-w-screen-xl m-0 sm:mx-10 sm:mt-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
+          <div  className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
             <form
               onSubmit={submitHandler}
-              class="mt-2 flex flex-col items-center"
+               className="mt-2 flex flex-col items-center"
             >
-              <div class="w-full flex-1 mt-1">
+              <div  className="w-full flex-1 mt-1">
                  
 
-                <div class="my-12 border-b text-center">
-                  <div class="leading-none px-2 inline-block text-l text-[#011106] tracking-wide font-semibold uppercase bg-white transform translate-y-1/2">
+                <div  className="my-12 border-b text-center">
+                  <div  className="leading-none px-2 inline-block text-l text-[#011106] tracking-wide font-semibold uppercase bg-white transform translate-y-1/2">
                     sign In
                   </div>
                 </div>
 
-                <div class="mx-auto max-w-xs">
+                <div  className="mx-auto max-w-xs">
                   <div className="my-2 font-semibold">
                     <Label className="  leading-none   inline-block text-l text-[#011106] tracking-wide font-semibold uppercase bg-white transform translate-y-1/2">Email</Label>
                     <Input
-                      class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
+                       className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
                       type="email"
                       value={input.email}
                       name="email"
@@ -89,7 +89,7 @@ const Login = () => {
                   <div className="my-2">
                     <Label className="  leading-none   inline-block text-l text-[#011106] tracking-wide font-semibold uppercase bg-white transform translate-y-1/2">Password</Label>
                     <Input
-                      class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
+                       className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
                       type="password"
                       value={input.password}
                       name="password"
@@ -149,7 +149,7 @@ const Login = () => {
                   ) : (
                     <Button
                       type="submit"
-                      class=" my-2 mt-5 tracking-wide font-semibold bg-gradient-to-r from-blue-500 to-purple-700 shadow-lg text-white-500 w-full py-4 rounded-lg  transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
+                       className=" my-2 mt-5 tracking-wide font-semibold bg-gradient-to-r from-blue-500 to-purple-700 shadow-lg text-white-500 w-full py-4 rounded-lg  transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
                     >
                       Login
                     </Button>
@@ -167,8 +167,8 @@ const Login = () => {
             </form>
           </div>
 
-          <div class="flex-1 bg-green-100 text-center   justify-center align-middle hidden lg:flex">
-            <div class="m-12 xl:m-16 w-full  flex align-center justify-center ">
+          <div  className="flex-1 bg-green-100 text-center   justify-center align-middle hidden lg:flex">
+            <div  className="m-12 xl:m-16 w-full  flex align-center justify-center ">
               <h1 className=" text-5xl text-[#011106]">
                 Better hiring, <br />
                 all-together.

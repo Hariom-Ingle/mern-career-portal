@@ -77,8 +77,8 @@ const Signup = () => {
           <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
             <form onSubmit={submitHandler} className="flex flex-col items-center">
               <div className="w-full flex-1 mt-1">
-              <div class="my-12 border-b text-center">
-                  <div class="leading-none px-2 inline-block text-l text-[#011106] tracking-wide font-semibold uppercase bg-white transform translate-y-1/2">
+              <div  className="my-12 border-b text-center">
+                  <div  className="leading-none px-2 inline-block text-l text-[#011106] tracking-wide font-semibold uppercase bg-white transform translate-y-1/2">
                     sign up
                   </div>
                 </div>
@@ -192,8 +192,8 @@ const Signup = () => {
               </div>
             </form>
           </div>
-          <div class="flex-1 bg-green-100 text-center   justify-center align-middle hidden lg:flex">
-            <div class="m-12 xl:m-16 w-full  flex align-center justify-center ">
+          <div  className="flex-1 bg-green-100 text-center   justify-center align-middle hidden lg:flex">
+            <div  className="m-12 xl:m-16 w-full  flex align-center justify-center ">
               <h1 className=" text-5xl text-[#011106]">
                 Better hiring, <br />
                 all-together.
