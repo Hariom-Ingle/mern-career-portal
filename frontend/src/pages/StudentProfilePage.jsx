@@ -54,7 +54,7 @@ const Profile = () => {
         <div className="flex flex-col md:flex-row">
         
           {/* Sidebar */}
-          <nav className="md:w-1/4 bg-white h-full p-5 rounded-xl border border-gray-200 mb-5 md:mb-0">
+          <nav className="md:w-1/4 bg-white h-full p-5 rounded-xl border border-gray-200 mb-5 md:mb-0 shadow-xl shadow-[#161d6f3d]">
             <div className="w-36 h-36 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full border-2 border-green-300 overflow-hidden mx-auto">
               <img
                 src={user?.profile?.profilePhoto}

@@ -23,13 +23,13 @@ const CompaniesTable = () => {
     return (
         <div>
             <Table>
-                <TableCaption>A list of your recent registered companies</TableCaption>
+                <TableCaption className=" font-semibold ">A list of your recent registered companies</TableCaption>
                 <TableHeader>
                     <TableRow>
-                        <TableHead>Logo</TableHead>
-                        <TableHead>Name</TableHead>
-                        <TableHead>Date</TableHead>
-                        <TableHead className="text-right">Action</TableHead>
+                        <TableHead className=" font-semibold">Logo</TableHead>
+                        <TableHead className=" font-semibold">Name</TableHead>
+                        <TableHead className=" font-semibold">Date</TableHead>
+                        <TableHead className=" font-semibold text-right"  >Action</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>

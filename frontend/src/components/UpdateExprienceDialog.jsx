@@ -151,6 +151,7 @@ const UpdateExperienceDialog = ({
           <div>
             <Label>Company Name</Label>
             <Input
+            required
               name="companyName"
               value={updatedExperience.companyName}
               onChange={handleInputChange}
@@ -162,6 +163,7 @@ const UpdateExperienceDialog = ({
           <div>
             <Label>Job Role</Label>
             <Input
+            required
               name="jobRole"
               value={updatedExperience.jobRole}
               onChange={handleInputChange}
@@ -173,6 +175,7 @@ const UpdateExperienceDialog = ({
           <div>
             <Label>Duration</Label>
             <Input
+            required
               name="duration"
               value={updatedExperience.duration}
               onChange={handleInputChange}
@@ -184,6 +187,7 @@ const UpdateExperienceDialog = ({
           <div>
             <Label>location</Label>
             <Input
+            required
               name="location"
               value={updatedExperience.location}
               onChange={handleInputChange}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Button } from "./ui/button";
 import { Search } from "lucide-react";
 import { useDispatch } from "react-redux";
@@ -28,14 +28,16 @@ const HeroSection = () => {
     <div className="text-center">
       <div className="flex flex-col gap-5 sm:mt-32 mt-20 animate-fade-in md:animate-slide-up">
         {/* Skeleton loader for "No. 1 Job Hunt Website" */}
-        <Skeleton
+        <div
           className={`mx-auto px-4 py-1 rounded-full ${
-            isLoading ? "bg-gray-300" : "bg-white text-yellow-500"
-          } outline-dotted text-sm sm:text-xl font-medium`}
-          visible={!isLoading}
-        >
+            isLoading ? "bg-white  " : "bg-white text-yellow-400"
+          } outline-dotted   font-medium  `}
+         
+        ><span className="drop-shadow-lg text-sm sm:text-xl text-[#161D6F] font-semibold">
+
           No. 1 Job Hunt Website
-        </Skeleton>
+        </span>
+        </div>
 
         {/* Skeleton loader for the heading */}
         <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-[#48bff2] transition duration-500 ease-in-out">

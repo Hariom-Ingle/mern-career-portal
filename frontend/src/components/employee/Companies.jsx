@@ -7,7 +7,7 @@ import Navbar from '../Navbar'
 import { Button } from '../ui/button'
 import { Input } from '../ui/input'
 import CompaniesTable from './CompaniesTable'
-
+import { Plus } from 'lucide-react'
 const Companies = () => {
     useGetAllCompanies();
     const [input, setInput] = useState("");
@@ -27,7 +27,7 @@ const Companies = () => {
                         placeholder="Filter by name"
                         onChange={(e) => setInput(e.target.value)}
                     />
-                    <Button onClick={() => navigate("companies/create")}>New Company</Button>
+                    <Button className="font-semibold border bg-gradient-to-r from-blue-500 to-purple-700 shadow-lg hover:shadow-inner " onClick={() => navigate("/create")}>New Company</Button>
                 </div>
                 <CompaniesTable/>
             </div>

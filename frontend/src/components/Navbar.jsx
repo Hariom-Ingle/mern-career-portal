@@ -53,8 +53,8 @@ const Navbar = () => {
             </div>
 
             <div className="flex items-center">
-              <h1 onClick={() => navigate("/")} className="text-2xl font-extrabold text-white">
-                Job<span className="text-yellow-400">Portal</span>
+              <h1 onClick={() => navigate("/")} className="text-2xl font-extrabold text-white curser-pointer">
+                Job<span className="text-yellow-400 cursor-pointer">Portal</span>
               </h1>
             </div>
           </div>
@@ -108,7 +108,7 @@ const Navbar = () => {
                   <div className="flex items-center gap-2 text-gray-600 cursor-pointer">
                     <User2 />
                     <Button variant="link">
-                      <Link to={user.role === "student" ? "/profile" : user.role === "admin" ? "/admin/dashboard" : user.role === "recruiter" ? "/recruiter/profile" : "/"}>
+                      <Link to={user.role === "student" ? "/profile" : user.role === "admin" ? "/admin/dashboard" : user.role === "recruiter" ? "/" : "/"}>
                         View Profile
                       </Link>
                     </Button>

@@ -1,7 +1,7 @@
 import { setLoading } from "@/redux/authSlice";
 import { USER_API_END_POINT } from "@/utils/constant";
 import axios from "axios";
-import { Loader2 } from "lucide-react";
+import { Loader } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -85,7 +85,7 @@ const Signup = () => {
 
                 <div className="mx-auto max-w-xs">
                   <div className="my-2">
-                    <Label className="  leading-none   inline-block text-l text-[#011106] tracking-wide font-semibold uppercase bg-white transform translate-y-1/2">Full Name</Label>
+                    <Label className="  leading-none   inline-block text-l text-[#011106] tracking-wide font-semibold   bg-white transform translate-y-1/2">Full Name</Label>
                     <Input
                       type="text"
                       value={input.fullname}
@@ -97,7 +97,7 @@ const Signup = () => {
                   </div>
 
                   <div className="my-2">
-                    <Label className="  leading-none   inline-block text-l text-[#011106] tracking-wide font-semibold uppercase bg-white transform translate-y-1/2">Email</Label>
+                    <Label className="  leading-none   inline-block text-l text-[#011106] tracking-wide font-semibold   bg-white transform translate-y-1/2">Email</Label>
                     <Input
                       type="email"
                       value={input.email}
@@ -109,7 +109,7 @@ const Signup = () => {
                   </div>
 
                   <div className="my-2">
-                    <Label className="  leading-none   inline-block text-l text-[#011106] tracking-wide font-semibold uppercase bg-white transform translate-y-1/2">Phone Number</Label>
+                    <Label className="  leading-none   inline-block text-l text-[#011106] tracking-wide font-semibold   bg-white transform translate-y-1/2">Phone Number</Label>
                     <Input
                       type="text"
                       value={input.phoneNumber}
@@ -121,7 +121,7 @@ const Signup = () => {
                   </div>
 
                   <div className="my-2">
-                    <Label className="  leading-none   inline-block text-l text-[#011106] tracking-wide font-semibold uppercase bg-white transform translate-y-1/2">Password</Label>
+                    <Label className="  leading-none   inline-block text-l text-[#011106] tracking-wide font-semibold   bg-white transform translate-y-1/2">Password</Label>
                     <Input
                       type="password"
                       value={input.password}
@@ -171,7 +171,7 @@ const Signup = () => {
 
                   {loading ? (
                     <Button className="w-full my-4 mt-5  text-black py-4 rounded-lg hover:bg-green-700 transition-all flex items-center justify-center">
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please wait
+                      <Loader className="mr-2 h-4 w-4 animate-spin" /> Please wait
                     </Button>
                   ) : (
                     <Button

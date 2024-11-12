@@ -1,7 +1,7 @@
 import { setLoading, setUser } from "@/redux/authSlice";
 import { USER_API_END_POINT } from "@/utils/constant";
 import axios from "axios";
-import { Loader2 } from "lucide-react";
+import { Loader } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -76,7 +76,7 @@ const Login = () => {
 
                 <div  className="mx-auto max-w-xs">
                   <div className="my-2 font-semibold">
-                    <Label className="  leading-none   inline-block text-l text-[#011106] tracking-wide font-semibold uppercase bg-white transform translate-y-1/2">Email</Label>
+                    <Label className="  leading-none   inline-block text-l text-[#011106] tracking-wide font-semibold   bg-white transform translate-y-1/2">Email</Label>
                     <Input
                        className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
                       type="email"
@@ -87,7 +87,7 @@ const Login = () => {
                     />
                   </div>
                   <div className="my-2">
-                    <Label className="  leading-none   inline-block text-l text-[#011106] tracking-wide font-semibold uppercase bg-white transform translate-y-1/2">Password</Label>
+                    <Label className="  leading-none   inline-block text-l text-[#011106] tracking-wide font-semibold   bg-white transform translate-y-1/2">Password</Label>
                     <Input
                        className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
                       type="password"
@@ -98,8 +98,8 @@ const Login = () => {
                     />
                   </div>
 
-                  <div className="flex   justify-around">
-                    <RadioGroup className="flex items-center gap-4 my-5">
+                  <div className="flex   justify-between">
+                    <RadioGroup className="flex items-center my-5">
                       <div className="flex items-center space-x-2">
                         <label className="flex items-center space-x-2 cursor-pointer">
                           <Input
@@ -144,7 +144,7 @@ const Login = () => {
                   {loading ? (
                     <Button className="w-full my-2">
                       {" "}
-                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />  {" "}
+                      <Loader className="mr-2 h-5 w-5 animate-spin" />  {" "}
                     </Button>
                   ) : (
                     <Button
@@ -167,14 +167,14 @@ const Login = () => {
             </form>
           </div>
 
-          <div  className="flex-1 bg-green-100 text-center   justify-center align-middle hidden lg:flex">
-            <div  className="m-12 xl:m-16 w-full  flex align-center justify-center ">
-              <h1 className=" text-5xl text-[#011106]">
-                Better hiring, <br />
-                all-together.
-              </h1>
-            </div>
-          </div>
+          <div className="flex-1 bg-green-100 text-center justify-center align-middle hidden lg:flex" style={{ fontFamily: "'Poppins', sans-serif" }}>
+  <div className="m-12 xl:m-16 w-full flex align-center justify-center">
+    <h1 className="text-3xl font-semibold text-[#011106]">
+      Welcome Back,<br />
+      Let’s Get You Hired
+    </h1>
+  </div>
+</div>
         </div>
       </div>
     </>

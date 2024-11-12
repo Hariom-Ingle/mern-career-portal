@@ -79,14 +79,14 @@ const AdminDashboard = () => {
       <div className="container mx-auto p-2 sm:p-5">
         <div className="flex flex-col md:flex-row">
           {/* Sidebar */}
-          <nav className="md:w-1/4 bg-white h-full p-5 rounded-xl border border-gray-200 mb-5 md:mb-0">
+          <nav className="md:w-1/4 bg-white h-full p-5 rounded-xl border border-gray-200 mb-5 md:mb-0 shadow-xl shadow-[#161d6f3d]">
             <div className="text-center my-3">
               <h1 className="text-lg font-bold text-black">{user?.fullname}</h1>
               <p className="text-sm text-gray-500">{user?.role}</p>
             </div>
 
             {/* Sidebar Navigation */}
-            <div className="flex flex-row justify-between sm:flex-col gap-4 text-black">
+            <div className="flex flex-row justify-between overflow-x-auto sm:flex-col gap-4 text-black">
               {["overview", "companies", "users", "jobs"].map((tab) => (
                 <div
                   key={tab}

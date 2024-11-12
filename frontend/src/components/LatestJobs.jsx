@@ -16,7 +16,7 @@ const LatestJobs = () => {
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 my-5">
         {
             allJobs.length <= 0 
-            ? <span className="col-span-full text-center">No Job Available</span> 
+            ? <span className="col-span-full text-center font-semibold text-lg"> Sorry, there are no jobs that match your search criteria. Please search again.</span> 
             : allJobs?.slice(0, 6).map((job) => (
                 <LatestJobCards key={job._id} job={job} />
             ))

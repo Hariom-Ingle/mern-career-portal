@@ -67,3 +67,22 @@
 .animate-infinite-scroll {
   animation: scroll 20s linear infinite;
 }
+
+
+@keyframes moveDottedBorder {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Applying the animation to Tailwind classes */
+.animate-dotted-border {
+  border-style: dotted;
+  border-width: 2px;
+  border-color: #ffd700; /* Yellow color for the border */
+  background-size: 200%; /* Scales the animation */
+  animation: moveDottedBorder 2s linear infinite;
+}

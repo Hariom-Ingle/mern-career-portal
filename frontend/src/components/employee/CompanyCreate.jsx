@@ -9,6 +9,7 @@ import Navbar from '../Navbar'
 import { Button } from '../ui/button'
 import { Input } from '../ui/input'
 import { Label } from '../ui/label'
+import { MoveLeftIcon } from 'lucide-react'
 
 const CompanyCreate = () => {
     const navigate = useNavigate();
@@ -41,7 +42,7 @@ const CompanyCreate = () => {
                     <p className='text-gray-500'>What would you like to give your company name? you can change this later.</p>
                 </div>
 
-                <Label>Company Name</Label>
+                <Label className="text-lg font-semibold">Company Name</Label>
                 <Input
                     type="text"
                     className="my-2"
@@ -49,7 +50,7 @@ const CompanyCreate = () => {
                     onChange={(e) => setCompanyName(e.target.value)}
                 />
                 <div className='flex items-center gap-2 my-10'>
-                    <Button variant="outline" onClick={() => navigate("/companies")}>Cancel</Button>
+                    <Button variant="outline" className="bg-[#7B27D0]" onClick={() => navigate("/companies")}><MoveLeftIcon/></Button>
                     <Button onClick={registerNewCompany}>Continue</Button>
                 </div>
             </div>
